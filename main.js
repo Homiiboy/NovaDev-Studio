@@ -8,6 +8,21 @@
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".brand-mark").forEach((mark) => {
+    const img = document.createElement("img");
+    img.className = "brand-logo-mark";
+    img.src = "/assets/novadev-mark.webp";
+    img.alt = "";
+    img.width = 42;
+    img.height = 42;
+    mark.replaceWith(img);
+  });
+
+  const founderMark = document.querySelector(".founder-mark");
+  if (founderMark && !founderMark.querySelector("img")) {
+    founderMark.innerHTML = '<img src="/assets/novadev-mark.webp" alt="NovaDev N Logo" width="115" height="115">';
+  }
+
   const burger = document.getElementById("burger");
   const navLinks = document.getElementById("navLinks");
 
