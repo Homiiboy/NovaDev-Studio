@@ -42,3 +42,13 @@
 .success-new{background:radial-gradient(circle at center,rgba(69,214,255,.09),transparent 30%),var(--bg)}
 .success-shell{border-color:rgba(45,156,255,.2)}
 @media (max-width:1000px){.nav-links{background:rgba(6,11,17,.98)}}
+
+/* NovaDev brand integration */
+.brand-logo-mark{width:42px;height:42px;display:block;object-fit:cover;border-radius:12px;border:1px solid rgba(45,156,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 0 26px rgba(45,156,255,.10)}
+.hero-logo-visual{min-height:500px}
+.hero-logo-shell{position:relative;width:min(100%,560px);overflow:hidden;border:1px solid rgba(45,156,255,.16);border-radius:28px;background:#000416;box-shadow:0 34px 90px rgba(0,0,0,.42),0 0 70px rgba(45,156,255,.08)}
+.hero-logo-shell::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.hero-full-logo{display:block;width:100%;height:auto}
+.founder-mark{padding:0;overflow:hidden;background:#000416}
+.founder-mark img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:700px){.brand-logo-mark{width:38px;height:38px;border-radius:11px}.hero-logo-visual{min-height:390px}.hero-logo-shell{width:min(100%,520px);border-radius:22px}}
