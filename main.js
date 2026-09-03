@@ -1,3 +1,12 @@
+(() => {
+  if (!document.querySelector('link[href="/palette.css"]')) {
+    const palette = document.createElement("link");
+    palette.rel = "stylesheet";
+    palette.href = "/palette.css";
+    document.head.appendChild(palette);
+  }
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burger");
   const navLinks = document.getElementById("navLinks");
