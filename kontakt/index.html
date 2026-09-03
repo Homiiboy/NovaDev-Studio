@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaDev Studio kontaktieren – Anfrage für Website, IT-Support oder digitale Lösungen senden.">
+  <title>Kontakt | NovaDev Studio</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar"><div class="container nav-inner"><a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a><button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button><nav class="nav-links" id="navLinks"><a href="/#services">Lösungen</a><a href="/leistungen/">Leistungen</a><a href="/about/">Über NovaDev</a><a class="active-link" href="/kontakt/">Kontakt</a></nav></div></header>
+
+  <main class="subpage contact-page-new">
+    <section class="page-hero compact-hero"><div class="container page-hero-inner"><span class="section-kicker">Kontakt</span><h1>Was können wir für dich lösen?</h1><p>Beschreib dein Vorhaben oder dein technisches Problem kurz. Du musst vorher nicht wissen, welche Leistung du genau brauchst.</p></div></section>
+
+    <section class="section contact-section-new"><div class="container contact-layout">
+      <form id="contactForm" class="modern-form" action="https://formspree.io/f/mlgzozjb" method="POST">
+        <input type="hidden" name="_subject" value="Neue Anfrage über NovaDev Studio">
+        <div class="form-grid two-col"><div class="form-field"><label for="name">Name *</label><input id="name" type="text" name="name" placeholder="Vor- und Nachname" required></div><div class="form-field"><label for="company">Unternehmen</label><input id="company" type="text" name="unternehmen" placeholder="Firmenname (optional)"></div></div>
+        <div class="form-grid two-col"><div class="form-field"><label for="email">E-Mail *</label><input id="email" type="email" name="email" placeholder="name@unternehmen.at" required></div><div class="form-field"><label for="phone">Telefon</label><input id="phone" type="tel" name="telefon" placeholder="Optional"></div></div>
+        <div class="form-field"><label for="service">Worum geht es? *</label><select id="service" name="service" required><option value="">Bitte auswählen</option><option value="Website / Redesign">Website / Redesign</option><option value="IT-Support">IT-Support</option><option value="Business E-Mail / Microsoft 365">Business E-Mail / Microsoft 365</option><option value="Hosting / Domain">Hosting / Domain</option><option value="Web Care">Web Care</option><option value="Business Care">Business Care</option><option value="IT Care">IT Care</option><option value="Digital Check">NovaDev Digital Check</option><option value="Sonstiges / Noch unsicher">Sonstiges / Noch unsicher</option></select></div>
+        <div class="form-field"><label for="message">Nachricht *</label><textarea id="message" name="nachricht" rows="7" placeholder="Was möchtest du umsetzen oder welches Problem soll gelöst werden?" required></textarea></div>
+        <label class="privacy-check"><input type="checkbox" required><span>Ich habe die <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu.</span></label>
+        <button class="btn btn-primary btn-large submit-btn" type="submit">Anfrage senden <span>→</span></button>
+        <p class="form-note">Die Anfrage ist unverbindlich. Wir klären Leistungsumfang und Preis vor der Umsetzung.</p>
+      </form>
+
+      <aside class="contact-sidebar"><div class="sidebar-card"><span class="section-kicker">Direkter Kontakt</span><h2>Persönlich statt Ticketsystem.</h2><p>Bei NovaDev hast du einen direkten Ansprechpartner. Für eine erste Einschätzung reicht meist eine kurze Beschreibung deines Anliegens.</p><div class="contact-detail"><span>E-Mail</span><a href="mailto:contact@novadev-studio.at">contact@novadev-studio.at</a></div><div class="contact-detail"><span>Standort</span><strong>Graz, Österreich</strong></div><div class="contact-detail"><span>Instagram</span><a href="https://instagram.com/novadev_webdev" target="_blank" rel="noopener">@novadev_webdev</a></div></div><div class="sidebar-mini"><span class="status-pulse"></span><p><strong>Typische Rückmeldung:</strong><br>innerhalb von 24 Stunden an Werktagen</p></div></aside>
+    </div></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a><p>Digitale Lösungen für Selbstständige und kleine Unternehmen.</p></div><div class="footer-column"><strong>Leistungen</strong><a href="/leistungen/#web">Web</a><a href="/leistungen/#it">IT-Support</a><a href="/leistungen/#business">Business Tools</a><a href="/leistungen/#care">Care</a></div><div class="footer-column"><strong>NovaDev</strong><a href="/about/">Über NovaDev</a><a href="/kontakt/">Kontakt</a><a href="https://instagram.com/novadev_webdev" target="_blank" rel="noopener">Instagram</a></div><div class="footer-column"><strong>Rechtliches</strong><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div></div><div class="container footer-bottom"><span>© 2026 NovaDev Studio</span><span>Graz, Österreich</span></div></footer>
+  <script src="/main.js"></script>
+</body>
+</html>
