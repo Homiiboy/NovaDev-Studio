@@ -65,3 +65,27 @@
   border-bottom:0 !important;
   border-block:0 !important;
 }
+
+
+/* Seamless service sections: keep structure through spacing/cards, not full-width color bands */
+.subpage,
+.service-detail-section,
+.service-detail-section.alternate-detail,
+.alternate-detail,
+.cta-section{
+  background:var(--bg) !important;
+}
+
+.service-detail-section{
+  box-shadow:none !important;
+}
+
+.service-detail-section + .service-detail-section{
+  margin-top:0 !important;
+}
+
+.service-detail-section > .container,
+.cta-section > .container{
+  position:relative;
+  z-index:1;
+}
