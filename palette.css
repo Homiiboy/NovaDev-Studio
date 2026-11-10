@@ -184,3 +184,73 @@ main,
 .cta-section{
   box-shadow:none !important;
 }
+
+
+/* Fully unified NovaDev surfaces
+   All large content areas and cards use one consistent dark panel tone.
+   Brand colors remain accents only. */
+:root{
+  --panel:rgba(255,255,255,.025);
+  --panel-hover:rgba(255,255,255,.038);
+}
+
+footer.footer{
+  background:var(--bg) !important;
+}
+
+.service-card,
+.featured-service,
+.digital-check,
+.check-list-card,
+.process-step,
+.cta-card,
+.detail-card,
+.detail-card.recommended,
+.capability-card,
+.care-card,
+.highlighted-care,
+.founder-card,
+.values-grid article,
+.modern-form,
+.sidebar-card,
+.legal-card-new,
+.success-shell{
+  background:var(--panel) !important;
+  background-image:none !important;
+  box-shadow:none;
+}
+
+.service-card:hover{
+  background:var(--panel-hover) !important;
+}
+
+.featured-service,
+.detail-card.recommended,
+.highlighted-care{
+  border-color:var(--line-strong) !important;
+}
+
+.digital-check,
+.cta-card,
+.founder-card,
+.modern-form,
+.sidebar-card,
+.legal-card-new,
+.success-shell{
+  border-color:var(--line) !important;
+}
+
+.process-step{
+  border-top-color:var(--line) !important;
+}
+
+.hero-logo-shell{
+  background:#060b11 !important;
+  box-shadow:none !important;
+}
+
+.check-list-row,
+.contact-detail,
+.footer-bottom{
+  border-color:var(--line) !important;
+}
