@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novadev-studio.at/sitemap.xml
