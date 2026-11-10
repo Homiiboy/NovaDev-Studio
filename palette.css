@@ -150,3 +150,37 @@ body.consent-modal-open{overflow:hidden}
   .consent-modal__footer{flex-direction:column;align-items:stretch}
   .consent-modal__footer a{text-align:center}
 }
+
+
+/* Uniform page backgrounds across the whole NovaDev website */
+html,
+body,
+main,
+.subpage,
+.hero,
+.page-hero,
+.section,
+.section-intro,
+.dark-panel-section,
+.service-detail-section,
+.service-detail-section.alternate-detail,
+.alternate-detail,
+.values-section,
+.contact-section-new,
+.legal-section-new,
+.cta-section{
+  background:var(--bg) !important;
+}
+
+.hero,
+.page-hero,
+.section,
+.section-intro,
+.dark-panel-section,
+.service-detail-section,
+.values-section,
+.contact-section-new,
+.legal-section-new,
+.cta-section{
+  box-shadow:none !important;
+}
