@@ -52,3 +52,16 @@
 .founder-mark{padding:0;overflow:hidden;background:#000416}
 .founder-mark img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:700px){.brand-logo-mark{width:38px;height:38px;border-radius:11px}.hero-logo-visual{min-height:390px}.hero-logo-shell{width:min(100%,520px);border-radius:22px}}
+
+
+/* Clean section transitions: no horizontal divider lines between major content sections */
+.page-hero,
+.section-intro,
+.dark-panel-section,
+.service-detail-section,
+.values-section,
+.footer{
+  border-top:0 !important;
+  border-bottom:0 !important;
+  border-block:0 !important;
+}
