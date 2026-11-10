@@ -1,12 +1,3 @@
-(() => {
-  if (!document.querySelector('link[href="/palette.css"]')) {
-    const palette = document.createElement("link");
-    palette.rel = "stylesheet";
-    palette.href = "/palette.css";
-    document.head.appendChild(palette);
-  }
-})();
-
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".brand-mark").forEach((mark) => {
     const img = document.createElement("img");
@@ -96,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll(".service-card, .process-step, .capability-card, .care-card, .values-grid article").forEach((el) => {
+  document.querySelectorAll(".service-card, .process-step, .capability-card, .care-card, .values-grid article, .audience-card, .faq-list details, .check-scope-card, .check-output-card").forEach((el) => {
     el.classList.add("reveal");
     observer.observe(el);
   });
