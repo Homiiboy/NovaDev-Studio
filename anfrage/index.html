@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Konfiguriere deine NovaDev-Anfrage Schritt für Schritt: Leistung, Umfang, Zeitrahmen, Budget und Kontaktdaten.">
+  <meta name="theme-color" content="#060b11">
+  <title>Anfrage konfigurieren | NovaDev Studio</title>
+  <link rel="canonical" href="https://novadev-studio.at/anfrage/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="NovaDev Studio">
+  <meta property="og:title" content="Anfrage konfigurieren | NovaDev Studio">
+  <meta property="og:description" content="Konfiguriere deine NovaDev-Anfrage Schritt für Schritt: Leistung, Umfang, Zeitrahmen, Budget und Kontaktdaten.">
+  <meta property="og:url" content="https://novadev-studio.at/anfrage/">
+  <meta property="og:image" content="https://novadev-studio.at/assets/novadev-logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anfrage konfigurieren | NovaDev Studio">
+  <meta name="twitter:description" content="Konfiguriere deine NovaDev-Anfrage Schritt für Schritt: Leistung, Umfang, Zeitrahmen, Budget und Kontaktdaten.">
+  <meta name="twitter:image" content="https://novadev-studio.at/assets/novadev-logo.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/palette.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks"><a href="/#services">Lösungen</a><a href="/leistungen/">Leistungen</a><a href="/about/">Über NovaDev</a><a href="/kontakt/">Kontakt</a></nav>
+    <a class="btn btn-primary desktop-cta" href="/anfrage/">Anfrage starten</a>
+  </div>
+</header>
+<main class="subpage">
+    <section class="page-hero compact-hero"><div class="container page-hero-inner"><span class="section-kicker">Anfrage-Konfigurator</span><h1>In wenigen Schritten zur passenden Anfrage.</h1><p>Du musst keine technische Leistungsbeschreibung schreiben. Beantworte ein paar kurze Fragen und wir erhalten die wichtigsten Eckdaten direkt strukturiert.</p></div></section>
+    <section class="section">
+      <div class="container">
+        <form class="wizard-shell" data-configurator data-ajax-form action="https://formspree.io/f/mlgzozjb" method="POST">
+          <input type="hidden" name="_subject" value="Neue konfigurierte NovaDev-Anfrage">
+          <input type="hidden" name="konfiguration" value="">
+          <div class="wizard-progress" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
+
+          <section class="wizard-step">
+            <span class="section-kicker">Schritt 1 von 4</span>
+            <h2>Wobei können wir helfen?</h2>
+            <p>Wähle den Bereich, der deinem Anliegen am nächsten kommt.</p>
+            <div class="option-grid">
+              <label class="option-card"><input type="radio" name="leistung" value="Website / Redesign" required><span><strong>Website / Redesign</strong><small>Neue Website, Landingpage oder bestehende Seite verbessern.</small></span></label>
+              <label class="option-card"><input type="radio" name="leistung" value="IT-Support" required><span><strong>IT-Support</strong><small>PCs, Windows, Software, Datenübertragung oder technisches Problem.</small></span></label>
+              <label class="option-card"><input type="radio" name="leistung" value="Business Tools" required><span><strong>Business Tools</strong><small>Business-E-Mail, Microsoft 365, Domain, Hosting oder Backup-Grundlage.</small></span></label>
+              <label class="option-card"><input type="radio" name="leistung" value="Digital Check" required><span><strong>Digital Check</strong><small>Erst gemeinsam prüfen, was bereits passt und was verbessert werden sollte.</small></span></label>
+              <label class="option-card"><input type="radio" name="leistung" value="Care / Betreuung" required><span><strong>Care & Betreuung</strong><small>Laufende Website- oder IT-Betreuung.</small></span></label>
+              <label class="option-card"><input type="radio" name="leistung" value="Noch unsicher" required><span><strong>Noch unsicher</strong><small>Kein Problem – beschreibe einfach dein Ziel.</small></span></label>
+            </div>
+            <div class="wizard-actions"><span></span><button class="btn btn-primary" type="button" data-next>Weiter →</button></div>
+          </section>
+
+          <section class="wizard-step" hidden>
+            <span class="section-kicker">Schritt 2 von 4</span>
+            <h2>Wie sieht dein Vorhaben aus?</h2>
+            <p>Eine grobe Einordnung reicht völlig.</p>
+            <div class="form-field"><label for="umfang">Projektumfang *</label><select id="umfang" name="umfang" required><option value="">Bitte auswählen</option><option>Neues Projekt / neue Einrichtung</option><option>Bestehende Lösung verbessern</option><option>Konkretes technisches Problem lösen</option><option>Laufende Betreuung gesucht</option><option>Noch offen / Beratung benötigt</option></select></div>
+            <div class="form-grid two-col"><div class="form-field"><label for="zeitrahmen">Gewünschter Zeitrahmen *</label><select id="zeitrahmen" name="zeitrahmen" required><option value="">Bitte auswählen</option><option>So bald wie möglich</option><option>Innerhalb von 2–4 Wochen</option><option>Innerhalb von 1–3 Monaten</option><option>Später / noch offen</option></select></div><div class="form-field"><label for="budget">Budgetrahmen</label><select id="budget" name="budget"><option value="">Noch offen</option><option>bis 750 €</option><option>750–1.500 €</option><option>1.500–3.000 €</option><option>über 3.000 €</option><option>Monatliche Betreuung</option></select></div></div>
+            <div class="wizard-actions"><button class="btn btn-secondary" type="button" data-prev>← Zurück</button><button class="btn btn-primary" type="button" data-next>Weiter →</button></div>
+          </section>
+
+          <section class="wizard-step" hidden>
+            <span class="section-kicker">Schritt 3 von 4</span>
+            <h2>Was ist dir besonders wichtig?</h2>
+            <p>Beschreibe dein Ziel in deinen eigenen Worten.</p>
+            <div class="form-field"><label for="projektziel">Kurzbeschreibung *</label><textarea id="projektziel" name="projektziel" rows="7" required placeholder="Zum Beispiel: Wir brauchen eine moderne Website für unseren Betrieb und möchten Domain und E-Mail gleich sauber einrichten."></textarea></div>
+            <div class="wizard-actions"><button class="btn btn-secondary" type="button" data-prev>← Zurück</button><button class="btn btn-primary" type="button" data-next>Weiter →</button></div>
+          </section>
+
+          <section class="wizard-step" hidden>
+            <span class="section-kicker">Schritt 4 von 4</span>
+            <h2>Wie erreichen wir dich?</h2>
+            <p>Danach melden wir uns mit einer ersten Einschätzung.</p>
+            <div class="form-grid two-col"><div class="form-field"><label for="cfg-name">Name *</label><input id="cfg-name" type="text" name="name" autocomplete="name" required></div><div class="form-field"><label for="cfg-company">Unternehmen</label><input id="cfg-company" type="text" name="unternehmen" autocomplete="organization"></div></div>
+            <div class="form-grid two-col"><div class="form-field"><label for="cfg-email">E-Mail *</label><input id="cfg-email" type="email" name="email" autocomplete="email" required></div><div class="form-field"><label for="cfg-phone">Telefon</label><input id="cfg-phone" type="tel" name="telefon" autocomplete="tel"></div></div>
+            <label class="privacy-check"><input type="checkbox" required><span>Ich habe die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a> zur Kenntnis genommen.</span></label>
+            <div class="wizard-actions"><button class="btn btn-secondary" type="button" data-prev>← Zurück</button><button class="btn btn-primary" type="submit">Anfrage senden →</button></div>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </section>
+        </form>
+      </div>
+    </section>
+  </main>
+<footer class="footer">
+  <div class="container footer-main">
+    <div class="footer-brand"><a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a><p>Digitale Lösungen für Selbstständige und kleine Unternehmen.</p></div>
+    <div class="footer-column"><strong>Starten</strong><a href="/anfrage/">Anfrage</a><a href="/preisrechner/">Preisrechner</a><a href="/termin/">Erstgespräch</a><a href="/digital-check/">Digital Check</a></div>
+    <div class="footer-column"><strong>NovaDev</strong><a href="/leistungen/">Leistungen</a><a href="/ratgeber/">Ratgeber</a><a href="/about/">Über NovaDev</a><a href="/kontakt/">Kontakt</a></div>
+    <div class="footer-column"><strong>Rechtliches</strong><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 NovaDev Studio</span><span>Graz, Österreich</span></div>
+</footer>
+<script src="/main.js" defer></script>
+</body>
+</html>
