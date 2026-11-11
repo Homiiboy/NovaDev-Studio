@@ -935,19 +935,19 @@ summary:focus-visible,.option-card input:focus-visible+span{
 .preview-atelier-scene{
   background:
     linear-gradient(90deg,rgba(233,224,213,.96) 0 38%,rgba(233,224,213,.18) 63%,rgba(25,23,21,.16)),
-    url("https://upload.wikimedia.org/wikipedia/commons/7/71/Case_Study_House_No._28_street_view_2015-03-06.jpg") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/5/5b/Casa_gaspar_exterior.jpg") center/cover no-repeat !important;
 }
 .preview-atelier-scene .pa-form{display:none}
 .preview-nexora-scene{
   background:
     linear-gradient(90deg,rgba(7,11,20,.98) 0 47%,rgba(7,11,20,.42)),
-    url("https://upload.wikimedia.org/wikipedia/commons/d/d5/Datacenter.jpg") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/b/b3/Datacenter_Server_Racks_%2822370909788%29.jpg") center/cover no-repeat !important;
 }
 .preview-nexora-scene .pn-orb{opacity:.5}
 .preview-solstice-scene{
   background:
     linear-gradient(90deg,rgba(239,225,204,.96) 0 42%,rgba(239,225,204,.28)),
-    url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_The_Good_Coffee_Company.jpg") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/6/61/Cozy_cafe_interior_with_stylish_seating_and_large_windows_on_a_quiet_street.jpg") center/cover no-repeat !important;
 }
 .preview-solstice-scene .ps-sun,.preview-solstice-scene .ps-cup{display:none}
 .preview-fitpeak-scene{
