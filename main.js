@@ -326,3 +326,130 @@ document.addEventListener("DOMContentLoaded", () => {
     initConsentManager();
   }
 })();
+
+
+/* Conversion tools + accessibility */
+document.addEventListener("DOMContentLoaded", () => {
+  const main = document.querySelector("main");
+  if (main && !main.id) main.id = "main-content";
+
+  if (!document.querySelector(".skip-link")) {
+    const skip = document.createElement("a");
+    skip.className = "skip-link";
+    skip.href = "#main-content";
+    skip.textContent = "Zum Inhalt springen";
+    document.body.prepend(skip);
+  }
+
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    try {
+      const linkPath = new URL(link.href, location.origin).pathname.replace(/\/$/, "") || "/";
+      const currentPath = location.pathname.replace(/\/$/, "") || "/";
+      if (linkPath === currentPath) link.setAttribute("aria-current", "page");
+    } catch (_) {}
+  });
+
+  document.querySelectorAll("img:not([fetchpriority='high'])").forEach((img) => {
+    if (!img.hasAttribute("loading")) img.loading = "lazy";
+    if (!img.hasAttribute("decoding")) img.decoding = "async";
+  });
+
+  const pathname = location.pathname;
+  const hideSticky = ["/kontakt/","/anfrage/","/termin/"].some((p) => pathname.startsWith(p));
+  if (!hideSticky && !document.querySelector(".mobile-sticky-cta")) {
+    const sticky = document.createElement("nav");
+    sticky.className = "mobile-sticky-cta";
+    sticky.setAttribute("aria-label", "Schnellaktionen");
+    sticky.innerHTML = '<a href="/anfrage/">Anfrage starten</a><a href="/termin/">Termin</a>';
+    document.body.appendChild(sticky);
+  }
+
+  const asyncForms = document.querySelectorAll("form[data-ajax-form]");
+  asyncForms.forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const button = form.querySelector('button[type="submit"]');
+      const status = form.querySelector(".form-status");
+      const original = button?.innerHTML || "Senden";
+      if (button) { button.disabled = true; button.textContent = "Wird gesendet..."; }
+      if (status) { status.textContent = ""; status.dataset.state = ""; }
+      try {
+        const response = await fetch(form.action, {
+          method:"POST",
+          body:new FormData(form),
+          headers:{Accept:"application/json"}
+        });
+        if (!response.ok) throw new Error("submit");
+        window.location.href="/success/";
+      } catch (_) {
+        if (status) {
+          status.textContent="Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut oder schreibe an contact@novadev-studio.at.";
+          status.dataset.state="error";
+        }
+      } finally {
+        if (button) { button.disabled=false; button.innerHTML=original; }
+      }
+    });
+  });
+
+  const wizard = document.querySelector("[data-configurator]");
+  if (wizard) {
+    const steps=[...wizard.querySelectorAll(".wizard-step")];
+    const bars=[...wizard.querySelectorAll(".wizard-progress span")];
+    const summary=wizard.querySelector('input[name="konfiguration"]');
+    let current=0;
+    const show=(index)=>{
+      current=Math.max(0,Math.min(index,steps.length-1));
+      steps.forEach((step,i)=>step.hidden=i!==current);
+      bars.forEach((bar,i)=>bar.classList.toggle("active",i<=current));
+      wizard.dataset.step=String(current+1);
+      steps[current].querySelector("input,select,textarea")?.focus({preventScroll:true});
+      wizard.scrollIntoView({behavior:"smooth",block:"start"});
+    };
+    wizard.addEventListener("click",(event)=>{
+      const next=event.target.closest("[data-next]");
+      const prev=event.target.closest("[data-prev]");
+      if(next){
+        const required=[...steps[current].querySelectorAll("input[required],select[required],textarea[required]")];
+        if(required.some((el)=>!el.checkValidity())) { required.find((el)=>!el.checkValidity())?.reportValidity(); return; }
+        show(current+1);
+      }
+      if(prev) show(current-1);
+    });
+    wizard.addEventListener("change",()=>{
+      if(summary){
+        const data=new FormData(wizard);
+        const parts=[];
+        for(const [key,value] of data.entries()){
+          if(["konfiguration","_subject"].includes(key) || !value) continue;
+          parts.push(`${key}: ${value}`);
+        }
+        summary.value=parts.join(" | ");
+      }
+    });
+    show(0);
+  }
+
+  const calculator=document.querySelector("[data-price-calculator]");
+  if(calculator){
+    const result=calculator.querySelector("[data-price-result]");
+    const monthly=calculator.querySelector("[data-monthly-result]");
+    const update=()=>{
+      const type=calculator.querySelector("[name='siteType']")?.value || "business";
+      const pages=Math.max(0,Number(calculator.querySelector("[name='extraPages']")?.value || 0));
+      const base={landing:599,business:999,custom:1499}[type] || 999;
+      let total=base + pages*120;
+      calculator.querySelectorAll("[data-addon]:checked").forEach((el)=> total+=Number(el.dataset.addon||0));
+      let monthlyValue=0;
+      const care=calculator.querySelector("[name='care']")?.value || "none";
+      if(care==="web") monthlyValue=39;
+      if(care==="business") monthlyValue=99;
+      if(result) result.textContent=`ab ${new Intl.NumberFormat("de-AT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(total)}`;
+      if(monthly) monthly.textContent=monthlyValue ? `zzgl. ab ${monthlyValue} € / Monat` : "keine laufende Betreuung ausgewählt";
+    };
+    calculator.addEventListener("input",update);
+    calculator.addEventListener("change",update);
+    update();
+  }
+});
