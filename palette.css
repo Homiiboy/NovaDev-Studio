@@ -935,30 +935,30 @@ summary:focus-visible,.option-card input:focus-visible+span{
 .preview-atelier-scene{
   background:
     linear-gradient(90deg,rgba(233,224,213,.96) 0 38%,rgba(233,224,213,.18) 63%,rgba(25,23,21,.16)),
-    url("https://images.pexels.com/photos/7031607/pexels-photo-7031607.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/7/71/Case_Study_House_No._28_street_view_2015-03-06.jpg") center/cover no-repeat !important;
 }
 .preview-atelier-scene .pa-form{display:none}
 .preview-nexora-scene{
   background:
     linear-gradient(90deg,rgba(7,11,20,.98) 0 47%,rgba(7,11,20,.42)),
-    url("https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/d/d5/Datacenter.jpg") center/cover no-repeat !important;
 }
 .preview-nexora-scene .pn-orb{opacity:.5}
 .preview-solstice-scene{
   background:
     linear-gradient(90deg,rgba(239,225,204,.96) 0 42%,rgba(239,225,204,.28)),
-    url("https://images.pexels.com/photos/3441194/pexels-photo-3441194.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_The_Good_Coffee_Company.jpg") center/cover no-repeat !important;
 }
 .preview-solstice-scene .ps-sun,.preview-solstice-scene .ps-cup{display:none}
 .preview-fitpeak-scene{
   background:
     linear-gradient(90deg,rgba(10,11,10,.96) 0 45%,rgba(10,11,10,.32)),
-    url("https://images.pexels.com/photos/4164467/pexels-photo-4164467.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/d/d8/Interior_of_a_Gym.jpg") center/cover no-repeat !important;
 }
 .preview-fitpeak-scene .pf-grid{opacity:.35}
 .preview-travelia-scene{
   background:
     linear-gradient(90deg,rgba(223,244,255,.96) 0 38%,rgba(223,244,255,.18)),
-    url("https://images.pexels.com/photos/35493336/pexels-photo-35493336.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/e/ec/Amalfi_coast.jpg") center/cover no-repeat !important;
 }
 .preview-travelia-scene .pt-sky,.preview-travelia-scene .pt-island,.preview-travelia-scene .pt-water{display:none}
