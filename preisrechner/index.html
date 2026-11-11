@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unverbindlicher NovaDev Preisrechner für typische Website-Projekte und optionale Betreuung.">
+  <meta name="theme-color" content="#060b11">
+  <title>Preisrechner | NovaDev Studio</title>
+  <link rel="canonical" href="https://novadev-studio.at/preisrechner/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="NovaDev Studio">
+  <meta property="og:title" content="Preisrechner | NovaDev Studio">
+  <meta property="og:description" content="Unverbindlicher NovaDev Preisrechner für typische Website-Projekte und optionale Betreuung.">
+  <meta property="og:url" content="https://novadev-studio.at/preisrechner/">
+  <meta property="og:image" content="https://novadev-studio.at/assets/novadev-logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Preisrechner | NovaDev Studio">
+  <meta name="twitter:description" content="Unverbindlicher NovaDev Preisrechner für typische Website-Projekte und optionale Betreuung.">
+  <meta name="twitter:image" content="https://novadev-studio.at/assets/novadev-logo.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/palette.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks"><a href="/#services">Lösungen</a><a href="/leistungen/">Leistungen</a><a href="/about/">Über NovaDev</a><a href="/kontakt/">Kontakt</a></nav>
+    <a class="btn btn-primary desktop-cta" href="/anfrage/">Anfrage starten</a>
+  </div>
+</header>
+<main class="subpage">
+    <section class="page-hero compact-hero"><div class="container page-hero-inner"><span class="section-kicker">Website-Preisrechner</span><h1>Was könnte deine Website ungefähr kosten?</h1><p>Wähle den gewünschten Umfang und erhalte eine unverbindliche Preisorientierung. Das Ergebnis ist kein verbindliches Angebot, sondern eine erste Planungsgröße.</p></div></section>
+    <section class="section">
+      <div class="container calculator-shell" data-price-calculator>
+        <div class="calculator-grid">
+          <div class="calculator-controls">
+            <div class="calc-row"><label for="siteType">Website-Typ</label><select id="siteType" name="siteType"><option value="landing">Landingpage – ab 599 €</option><option value="business" selected>Business Website – ab 999 €</option><option value="custom">Individuelle Website – Orientierung ab 1.499 €</option></select></div>
+            <div class="calc-row"><label for="extraPages">Zusätzliche Inhaltsseiten</label><input id="extraPages" name="extraPages" type="number" min="0" max="20" value="0"><p class="check-note">Als grobe Orientierung werden 120 € je zusätzlicher Inhaltsseite angesetzt.</p></div>
+            <fieldset class="calc-row"><legend>Optionale Erweiterungen</legend><div class="calc-checks">
+              <label class="calc-check"><input type="checkbox" data-addon="120"> Erweitertes Kontakt-/Anfrageformular (+120 €)</label>
+              <label class="calc-check"><input type="checkbox" data-addon="180"> Termin-/Buchungsintegration (+180 €)</label>
+              <label class="calc-check"><input type="checkbox" data-addon="150"> Unterstützung bei Textstruktur/Inhalten (+150 €)</label>
+              <label class="calc-check"><input type="checkbox" data-addon="120"> Business-E-Mail Grundeinrichtung (+120 €)</label>
+            </div></fieldset>
+            <div class="calc-row"><label for="care">Laufende Betreuung</label><select id="care" name="care"><option value="none">Keine auswählen</option><option value="web">Web Care – ab 39 €/Monat</option><option value="business">Business Care – ab 99 €/Monat</option></select></div>
+          </div>
+          <aside class="price-result" aria-live="polite">
+            <span class="estimate-label">Unverbindliche Orientierung</span>
+            <strong data-price-result>ab 999 €</strong>
+            <p>Der tatsächliche Preis hängt von Design, Inhalt, Funktionen, bestehender Technik und dem final abgestimmten Leistungsumfang ab.</p>
+            <div class="monthly-estimate"><span class="estimate-label">Betreuung</span><p><b data-monthly-result>keine laufende Betreuung ausgewählt</b></p></div>
+            <div class="hero-actions"><a class="btn btn-primary full-btn" href="/anfrage/">Mit dieser Idee anfragen</a></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="section"><div class="container faq-shell"><div class="section-heading centered-heading"><span class="section-kicker">Wichtig</span><h2>Was der Rechner kann – und was nicht.</h2></div><div class="faq-list"><details open><summary>Ist der errechnete Preis verbindlich?</summary><p>Nein. Der Rechner dient ausschließlich als grobe Orientierung. Vor einer Beauftragung erhältst du ein konkretes Angebot mit abgestimmtem Leistungsumfang.</p></details><details><summary>Warum kann ein individuelles Projekt abweichen?</summary><p>Spezielle Funktionen, umfangreiche Inhalte, Schnittstellen, besondere Designanforderungen oder bestehende technische Systeme können den Aufwand verändern.</p></details></div></div></section>
+  </main>
+<footer class="footer">
+  <div class="container footer-main">
+    <div class="footer-brand"><a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a><p>Digitale Lösungen für Selbstständige und kleine Unternehmen.</p></div>
+    <div class="footer-column"><strong>Starten</strong><a href="/anfrage/">Anfrage</a><a href="/preisrechner/">Preisrechner</a><a href="/termin/">Erstgespräch</a><a href="/digital-check/">Digital Check</a></div>
+    <div class="footer-column"><strong>NovaDev</strong><a href="/leistungen/">Leistungen</a><a href="/ratgeber/">Ratgeber</a><a href="/about/">Über NovaDev</a><a href="/kontakt/">Kontakt</a></div>
+    <div class="footer-column"><strong>Rechtliches</strong><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 NovaDev Studio</span><span>Graz, Österreich</span></div>
+</footer>
+<script src="/main.js" defer></script>
+</body>
+</html>
