@@ -929,3 +929,36 @@ summary:focus-visible,.option-card input:focus-visible+span{
 .concept-note{margin-top:34px;padding:20px 22px;border:1px solid var(--line);border-radius:18px;display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--panel)}.concept-note span{color:var(--blue-2);font-family:var(--font-tech);font-size:.58rem;letter-spacing:.1em}.concept-note p{color:var(--muted);font-size:.78rem;line-height:1.65}
 @media(max-width:900px){.portfolio-card{grid-template-columns:1fr}.portfolio-preview{min-height:330px}.preview-browser{min-height:290px}.preview-atelier-scene,.preview-nexora-scene,.preview-solstice-scene,.preview-fitpeak-scene,.preview-travelia-scene{height:252px}}
 @media(max-width:600px){.portfolio-preview{padding:12px;min-height:265px}.preview-browser{min-height:235px}.preview-atelier-scene,.preview-nexora-scene,.preview-solstice-scene,.preview-fitpeak-scene,.preview-travelia-scene{height:197px}.portfolio-copy{padding:25px}.pa-copy strong,.pn-copy strong,.ps-copy strong,.pt-copy strong{font-size:1.45rem}.pf-copy strong{font-size:1.65rem}.pn-dash{display:none}.concept-note{grid-template-columns:1fr}}
+
+
+/* Real-photo portfolio previews */
+.preview-atelier-scene{
+  background:
+    linear-gradient(90deg,rgba(233,224,213,.96) 0 38%,rgba(233,224,213,.18) 63%,rgba(25,23,21,.16)),
+    url("https://images.unsplash.com/photo-1773338359940-800463bdb926?auto=format&fit=crop&w=1200&q=82") center/cover no-repeat !important;
+}
+.preview-atelier-scene .pa-form{display:none}
+.preview-nexora-scene{
+  background:
+    linear-gradient(90deg,rgba(7,11,20,.98) 0 47%,rgba(7,11,20,.42)),
+    url("https://images.unsplash.com/photo-1680992045563-2ab442f3feee?auto=format&fit=crop&w=1200&q=82") center/cover no-repeat !important;
+}
+.preview-nexora-scene .pn-orb{opacity:.5}
+.preview-solstice-scene{
+  background:
+    linear-gradient(90deg,rgba(239,225,204,.96) 0 42%,rgba(239,225,204,.28)),
+    url("https://images.unsplash.com/photo-1578583112957-2dcf6878aeae?auto=format&fit=crop&w=1200&q=82") center/cover no-repeat !important;
+}
+.preview-solstice-scene .ps-sun,.preview-solstice-scene .ps-cup{display:none}
+.preview-fitpeak-scene{
+  background:
+    linear-gradient(90deg,rgba(10,11,10,.96) 0 45%,rgba(10,11,10,.32)),
+    url("https://images.unsplash.com/photo-1767552273968-da3464e2986c?auto=format&fit=crop&w=1200&q=82") center/cover no-repeat !important;
+}
+.preview-fitpeak-scene .pf-grid{opacity:.35}
+.preview-travelia-scene{
+  background:
+    linear-gradient(90deg,rgba(223,244,255,.96) 0 38%,rgba(223,244,255,.18)),
+    url("https://images.unsplash.com/photo-1753193954149-3e77f31d430f?auto=format&fit=crop&w=1200&q=82") center/cover no-repeat !important;
+}
+.preview-travelia-scene .pt-sky,.preview-travelia-scene .pt-island,.preview-travelia-scene .pt-water{display:none}
