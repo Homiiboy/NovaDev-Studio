@@ -83,7 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("reveal-visible");
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal-visible");
+        observer.unobserve(entry.target);
+      }
     });
   }, { threshold: 0.08 });
 
@@ -399,13 +402,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const bars=[...wizard.querySelectorAll(".wizard-progress span")];
     const summary=wizard.querySelector('input[name="konfiguration"]');
     let current=0;
-    const show=(index)=>{
+    const show=(index, shouldScroll=true)=>{
       current=Math.max(0,Math.min(index,steps.length-1));
       steps.forEach((step,i)=>step.hidden=i!==current);
       bars.forEach((bar,i)=>bar.classList.toggle("active",i<=current));
       wizard.dataset.step=String(current+1);
-      steps[current].querySelector("input,select,textarea")?.focus({preventScroll:true});
-      wizard.scrollIntoView({behavior:"smooth",block:"start"});
+      if (shouldScroll) {
+        steps[current].querySelector("input,select,textarea")?.focus({preventScroll:true});
+        wizard.scrollIntoView({behavior:"smooth",block:"start"});
+      }
     };
     wizard.addEventListener("click",(event)=>{
       const next=event.target.closest("[data-next]");
@@ -428,7 +433,14 @@ document.addEventListener("DOMContentLoaded", () => {
         summary.value=parts.join(" | ");
       }
     });
-    show(0);
+    show(0,false);
+  }
+
+  const bookingDate=document.getElementById("booking-date");
+  if(bookingDate && !bookingDate.min){
+    const now=new Date();
+    const localDate=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+    bookingDate.min=localDate;
   }
 
   const calculator=document.querySelector("[data-price-calculator]");
