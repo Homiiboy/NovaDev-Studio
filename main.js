@@ -437,10 +437,114 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const bookingDate=document.getElementById("booking-date");
-  if(bookingDate && !bookingDate.min){
+  const bookingTime=document.getElementById("booking-time");
+  const bookingType=document.getElementById("booking-type");
+  const bookingTimeLabel=document.getElementById("booking-time-label");
+  const bookingTimeNote=document.getElementById("booking-time-note");
+  const bookingTypeNote=document.getElementById("booking-type-note");
+  const bookingRuleStatus=document.getElementById("booking-rule-status");
+
+  if(bookingDate){
     const now=new Date();
     const localDate=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
-    bookingDate.min=localDate;
+    if(!bookingDate.min) bookingDate.min=localDate;
+
+    const setOptions=(select,options,placeholder)=>{
+      if(!select) return;
+      select.innerHTML="";
+      const empty=document.createElement("option");
+      empty.value="";
+      empty.textContent=placeholder;
+      select.appendChild(empty);
+      options.forEach(({value,label})=>{
+        const option=document.createElement("option");
+        option.value=value;
+        option.textContent=label;
+        select.appendChild(option);
+      });
+      select.disabled=false;
+      select.value="";
+    };
+
+    const resetBooking=(message)=>{
+      if(bookingTime){
+        bookingTime.innerHTML='<option value="">Bitte zuerst Datum auswählen</option>';
+        bookingTime.disabled=true;
+      }
+      if(bookingType){
+        bookingType.innerHTML='<option value="">Bitte zuerst Datum auswählen</option>';
+        bookingType.disabled=true;
+      }
+      if(bookingRuleStatus){
+        bookingRuleStatus.classList.toggle("is-error",Boolean(message));
+        if(message){
+          bookingRuleStatus.innerHTML='<span>HINWEIS</span><strong>'+message+'</strong>';
+        }else{
+          bookingRuleStatus.innerHTML='<span>MO–DO</span><strong>16:00–19:00 · Telefon oder Online</strong><span>FR</span><strong>Flexible Zeitfenster · Vor Ort nach Absprache möglich</strong>';
+        }
+      }
+    };
+
+    const updateAvailability=()=>{
+      const value=bookingDate.value;
+      bookingDate.setCustomValidity("");
+      if(!value){ resetBooking(""); return; }
+
+      const [year,month,day]=value.split("-").map(Number);
+      const selected=new Date(year,month-1,day);
+      const weekday=selected.getDay();
+
+      if(weekday===0 || weekday===6){
+        bookingDate.setCustomValidity("Termine sind nur Montag bis Freitag möglich.");
+        bookingDate.reportValidity();
+        resetBooking("Am Samstag und Sonntag sind derzeit keine Termine verfügbar. Bitte wähle Montag bis Freitag.");
+        return;
+      }
+
+      if(weekday>=1 && weekday<=4){
+        setOptions(bookingTime,[
+          {value:"16:00–17:00",label:"16:00–17:00"},
+          {value:"17:00–18:00",label:"17:00–18:00"},
+          {value:"18:00–19:00",label:"18:00–19:00"}
+        ],"Zeit zwischen 16:00 und 19:00 wählen");
+        setOptions(bookingType,[
+          {value:"Telefon",label:"Telefon"},
+          {value:"Online / Videocall",label:"Online / Videocall"}
+        ],"Telefon oder Online auswählen");
+        if(bookingTimeLabel) bookingTimeLabel.textContent="Verfügbare Zeit (Mo–Do 16:00–19:00) *";
+        if(bookingTimeNote) bookingTimeNote.textContent="Montag bis Donnerstag sind ausschließlich Termine zwischen 16:00 und 19:00 Uhr verfügbar.";
+        if(bookingTypeNote) bookingTypeNote.textContent="Montag bis Donnerstag sind nur Telefon- oder Online-Termine möglich.";
+        if(bookingRuleStatus){
+          bookingRuleStatus.classList.remove("is-error");
+          bookingRuleStatus.innerHTML='<span>GEWÄHLT</span><strong>Mo–Do · 16:00–19:00 · Telefon oder Online</strong>';
+        }
+        return;
+      }
+
+      setOptions(bookingTime,[
+        {value:"08:00–10:00",label:"08:00–10:00"},
+        {value:"10:00–12:00",label:"10:00–12:00"},
+        {value:"12:00–14:00",label:"12:00–14:00"},
+        {value:"14:00–16:00",label:"14:00–16:00"},
+        {value:"16:00–18:00",label:"16:00–18:00"},
+        {value:"Anderer Zeitraum",label:"Anderer Zeitraum"}
+      ],"Zeitfenster auswählen");
+      setOptions(bookingType,[
+        {value:"Telefon",label:"Telefon"},
+        {value:"Online / Videocall",label:"Online / Videocall"},
+        {value:"Vor Ort nach Absprache",label:"Vor Ort nach Absprache"}
+      ],"Gesprächsart auswählen");
+      if(bookingTimeLabel) bookingTimeLabel.textContent="Bevorzugtes Zeitfenster (Freitag) *";
+      if(bookingTimeNote) bookingTimeNote.textContent="Am Freitag stehen die bisherigen flexiblen Zeitfenster zur Verfügung.";
+      if(bookingTypeNote) bookingTypeNote.textContent="Freitag ist zusätzlich ein Vor-Ort-Termin nach Absprache möglich.";
+      if(bookingRuleStatus){
+        bookingRuleStatus.classList.remove("is-error");
+        bookingRuleStatus.innerHTML='<span>GEWÄHLT</span><strong>Freitag · flexible Zeitfenster · Vor Ort nach Absprache möglich</strong>';
+      }
+    };
+
+    bookingDate.addEventListener("change",updateAvailability);
+    updateAvailability();
   }
 
   const calculator=document.querySelector("[data-price-calculator]");
