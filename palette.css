@@ -962,3 +962,34 @@ summary:focus-visible,.option-card input:focus-visible+span{
     url("https://upload.wikimedia.org/wikipedia/commons/e/ec/Amalfi_coast.jpg") center/cover no-repeat !important;
 }
 .preview-travelia-scene .pt-sky,.preview-travelia-scene .pt-island,.preview-travelia-scene .pt-water{display:none}
+
+
+/* Reliable portfolio image elements */
+.preview-atelier-scene,
+.preview-nexora-scene,
+.preview-solstice-scene,
+.preview-fitpeak-scene,
+.preview-travelia-scene{position:relative}
+.portfolio-photo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  z-index:0;
+}
+.preview-atelier-scene .portfolio-photo{filter:brightness(.92) saturate(.82)}
+.preview-nexora-scene .portfolio-photo{filter:brightness(.42) saturate(.72)}
+.preview-solstice-scene .portfolio-photo{filter:brightness(.82) saturate(.88)}
+.preview-fitpeak-scene .portfolio-photo{filter:brightness(.42) saturate(.78)}
+.preview-travelia-scene .portfolio-photo{filter:brightness(.78) saturate(.92)}
+.preview-atelier-scene .pa-copy,
+.preview-nexora-scene .pn-copy,
+.preview-nexora-scene .pn-orb,
+.preview-nexora-scene .pn-dash,
+.preview-solstice-scene .ps-copy,
+.preview-fitpeak-scene .pf-grid,
+.preview-fitpeak-scene .pf-copy,
+.preview-fitpeak-scene .pf-ring,
+.preview-travelia-scene .pt-copy{position:absolute;z-index:2}
