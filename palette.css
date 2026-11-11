@@ -728,3 +728,142 @@ summary:focus-visible,.option-card input:focus-visible+span{
   .mobile-sticky-cta a:last-child{border:1px solid var(--line);color:#fff;background:rgba(255,255,255,.035)}
   .cookie-banner{bottom:82px}
 }
+
+
+/* Price calculator add-on cards */
+.calc-addons{
+  border:0 !important;
+  padding:0 0 22px !important;
+  margin:0 !important;
+  min-inline-size:0;
+}
+.calc-addons legend{
+  width:100%;
+  padding:0;
+  margin:0 0 7px;
+  font-weight:750;
+}
+.calc-row-help{
+  color:var(--muted-2);
+  font-size:.76rem;
+  line-height:1.55;
+  margin-bottom:14px;
+}
+.calc-addon-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.calc-addon-card{
+  position:relative;
+  cursor:pointer;
+}
+.calc-addon-card>input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+.calc-addon-card__body{
+  min-height:112px;
+  height:100%;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:start;
+  gap:12px;
+  padding:15px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(255,255,255,.018);
+  transition:border-color .2s ease,background .2s ease,transform .2s ease;
+}
+.calc-addon-card:hover .calc-addon-card__body{
+  border-color:rgba(69,214,255,.28);
+  background:rgba(255,255,255,.028);
+  transform:translateY(-1px);
+}
+.calc-addon-card>input:checked+.calc-addon-card__body{
+  border-color:rgba(69,214,255,.55);
+  background:rgba(45,156,255,.075);
+  box-shadow:inset 0 0 0 1px rgba(69,214,255,.08);
+}
+.calc-addon-card>input:focus-visible+.calc-addon-card__body{
+  outline:2px solid var(--blue-2);
+  outline-offset:3px;
+}
+.calc-addon-icon{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  border:1px solid rgba(45,156,255,.22);
+  border-radius:9px;
+  color:var(--blue-2);
+  font-family:var(--font-tech);
+  font-size:.52rem;
+}
+.calc-addon-copy strong{
+  display:block;
+  margin:1px 0 5px;
+  color:var(--text);
+  font-size:.82rem;
+  line-height:1.35;
+}
+.calc-addon-copy small{
+  display:block;
+  color:var(--muted-2);
+  font-size:.7rem;
+  line-height:1.5;
+}
+.calc-addon-card__body>b{
+  color:var(--blue-2);
+  font-size:.7rem;
+  white-space:nowrap;
+  padding-top:3px;
+}
+
+/* Appointment availability rules */
+.booking-field-note{
+  display:block;
+  margin-top:7px;
+  color:var(--muted-2);
+  font-size:.7rem;
+  line-height:1.5;
+}
+.booking-field select:disabled{
+  opacity:.58;
+  cursor:not-allowed;
+}
+.booking-rule-status{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:8px 12px;
+  margin:20px 0 0;
+  padding:16px 17px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:rgba(255,255,255,.018);
+}
+.booking-rule-status span{
+  color:var(--blue-2);
+  font-family:var(--font-tech);
+  font-size:.56rem;
+  letter-spacing:.09em;
+}
+.booking-rule-status strong{
+  color:#c8d5e2;
+  font-size:.73rem;
+  font-weight:650;
+}
+.booking-rule-status.is-error{
+  border-color:rgba(255,110,110,.3);
+  background:rgba(255,100,100,.04);
+}
+.booking-rule-status.is-error strong{
+  color:#ffb1b1;
+}
+@media(max-width:700px){
+  .calc-addon-grid{grid-template-columns:1fr}
+  .calc-addon-card__body{min-height:0}
+  .booking-rule-status{grid-template-columns:1fr}
+}
