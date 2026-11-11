@@ -40,14 +40,30 @@
           <div class="booking-grid">
             <div class="booking-field"><label for="booking-name">Name *</label><input id="booking-name" name="name" type="text" autocomplete="name" required></div>
             <div class="booking-field"><label for="booking-email">E-Mail *</label><input id="booking-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="booking-field"><label for="booking-date">Wunschdatum *</label><input id="booking-date" name="wunschdatum" type="date" required></div>
-            <div class="booking-field"><label for="booking-time">Bevorzugtes Zeitfenster *</label><select id="booking-time" name="zeitfenster" required><option value="">Bitte auswählen</option><option>08:00–10:00</option><option>10:00–12:00</option><option>12:00–14:00</option><option>14:00–16:00</option><option>16:00–18:00</option><option>Anderer Zeitraum</option></select></div>
-            <div class="booking-field"><label for="booking-type">Gesprächsart *</label><select id="booking-type" name="gespraechsart" required><option value="">Bitte auswählen</option><option>Telefon</option><option>Online / Videocall</option><option>Vor Ort nach Absprache</option></select></div>
+            <div class="booking-field">
+              <label for="booking-date">Wunschdatum *</label>
+              <input id="booking-date" name="wunschdatum" type="date" required>
+              <small class="booking-field-note">Termine sind Montag bis Freitag möglich.</small>
+            </div>
+            <div class="booking-field">
+              <label id="booking-time-label" for="booking-time">Bevorzugtes Zeitfenster *</label>
+              <select id="booking-time" name="zeitfenster" required disabled><option value="">Bitte zuerst Datum auswählen</option></select>
+              <small id="booking-time-note" class="booking-field-note">Mo–Do sind Termine ausschließlich zwischen 16:00 und 19:00 Uhr möglich.</small>
+            </div>
+            <div class="booking-field">
+              <label for="booking-type">Gesprächsart *</label>
+              <select id="booking-type" name="gespraechsart" required disabled><option value="">Bitte zuerst Datum auswählen</option></select>
+              <small id="booking-type-note" class="booking-field-note">Mo–Do ausschließlich telefonisch oder online. Freitag ist auch ein Vor-Ort-Termin nach Absprache möglich.</small>
+            </div>
             <div class="booking-field"><label for="booking-topic">Thema *</label><select id="booking-topic" name="thema" required><option value="">Bitte auswählen</option><option>Website / Redesign</option><option>IT-Support</option><option>Business Tools</option><option>Digital Check</option><option>Care & Betreuung</option><option>Sonstiges</option></select></div>
             <div class="booking-field full"><label for="booking-message">Kurze Beschreibung</label><textarea id="booking-message" name="nachricht" rows="5" placeholder="Worum soll es im Gespräch ungefähr gehen?"></textarea></div>
           </div>
           <label class="privacy-check"><input type="checkbox" required><span>Ich habe die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a> zur Kenntnis genommen.</span></label>
           <button class="btn btn-primary btn-large full-btn" type="submit">Terminwunsch senden →</button>
+          <div id="booking-rule-status" class="booking-rule-status" aria-live="polite">
+            <span>MO–DO</span><strong>16:00–19:00 · Telefon oder Online</strong>
+            <span>FR</span><strong>Flexible Zeitfenster · Vor Ort nach Absprache möglich</strong>
+          </div>
           <p class="booking-note">Der Termin gilt erst nach persönlicher Bestätigung durch NovaDev als vereinbart.</p>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
