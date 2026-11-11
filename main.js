@@ -333,6 +333,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Conversion tools + accessibility */
 document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".nav-links");
+  if (nav && !nav.querySelector('a[href="/projekte/"]')) {
+    const solutions = nav.querySelector('a[href="/#services"]');
+    const projectsLink = document.createElement("a");
+    projectsLink.href = "/projekte/";
+    projectsLink.textContent = "Projekte";
+    if (solutions) solutions.insertAdjacentElement("afterend", projectsLink);
+    else nav.prepend(projectsLink);
+  }
+
   const main = document.querySelector("main");
   if (main && !main.id) main.id = "main-content";
 
