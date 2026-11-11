@@ -39,12 +39,44 @@
           <div class="calculator-controls">
             <div class="calc-row"><label for="siteType">Website-Typ</label><select id="siteType" name="siteType"><option value="landing">Landingpage – ab 599 €</option><option value="business" selected>Business Website – ab 999 €</option><option value="custom">Individuelle Website – Orientierung ab 1.499 €</option></select></div>
             <div class="calc-row"><label for="extraPages">Zusätzliche Inhaltsseiten</label><input id="extraPages" name="extraPages" type="number" min="0" max="20" value="0"><p class="check-note">Als grobe Orientierung werden 120 € je zusätzlicher Inhaltsseite angesetzt.</p></div>
-            <fieldset class="calc-row"><legend>Optionale Erweiterungen</legend><div class="calc-checks">
-              <label class="calc-check"><input type="checkbox" data-addon="120"> Erweitertes Kontakt-/Anfrageformular (+120 €)</label>
-              <label class="calc-check"><input type="checkbox" data-addon="180"> Termin-/Buchungsintegration (+180 €)</label>
-              <label class="calc-check"><input type="checkbox" data-addon="150"> Unterstützung bei Textstruktur/Inhalten (+150 €)</label>
-              <label class="calc-check"><input type="checkbox" data-addon="120"> Business-E-Mail Grundeinrichtung (+120 €)</label>
-            </div></fieldset>
+            <fieldset class="calc-row calc-addons">
+              <legend>Optionale Erweiterungen</legend>
+              <p class="calc-row-help">Wähle nur die Funktionen, die du wirklich brauchst. Mehrfachauswahl ist möglich.</p>
+              <div class="calc-addon-grid">
+                <label class="calc-addon-card">
+                  <input type="checkbox" data-addon="120">
+                  <span class="calc-addon-card__body">
+                    <span class="calc-addon-icon">01</span>
+                    <span class="calc-addon-copy"><strong>Kontakt- & Anfrageformular</strong><small>Erweitertes Formular für strukturierte Kundenanfragen.</small></span>
+                    <b>+120 €</b>
+                  </span>
+                </label>
+                <label class="calc-addon-card">
+                  <input type="checkbox" data-addon="180">
+                  <span class="calc-addon-card__body">
+                    <span class="calc-addon-icon">02</span>
+                    <span class="calc-addon-copy"><strong>Termin- / Buchungsintegration</strong><small>Terminwünsche oder Buchungen direkt über die Website.</small></span>
+                    <b>+180 €</b>
+                  </span>
+                </label>
+                <label class="calc-addon-card">
+                  <input type="checkbox" data-addon="150">
+                  <span class="calc-addon-card__body">
+                    <span class="calc-addon-icon">03</span>
+                    <span class="calc-addon-copy"><strong>Textstruktur & Inhalte</strong><small>Unterstützung beim Aufbau und bei der Struktur deiner Website-Texte.</small></span>
+                    <b>+150 €</b>
+                  </span>
+                </label>
+                <label class="calc-addon-card">
+                  <input type="checkbox" data-addon="120">
+                  <span class="calc-addon-card__body">
+                    <span class="calc-addon-icon">04</span>
+                    <span class="calc-addon-copy"><strong>Business-E-Mail Setup</strong><small>Grundlegende Einrichtung professioneller E-Mail-Adressen.</small></span>
+                    <b>+120 €</b>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
             <div class="calc-row"><label for="care">Laufende Betreuung</label><select id="care" name="care"><option value="none">Keine auswählen</option><option value="web">Web Care – ab 39 €/Monat</option><option value="business">Business Care – ab 99 €/Monat</option></select></div>
           </div>
           <aside class="price-result" aria-live="polite">
