@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wunschtermin für ein unverbindliches Erstgespräch mit NovaDev Studio senden.">
+  <meta name="theme-color" content="#060b11">
+  <title>Erstgespräch anfragen | NovaDev Studio</title>
+  <link rel="canonical" href="https://novadev-studio.at/termin/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="NovaDev Studio">
+  <meta property="og:title" content="Erstgespräch anfragen | NovaDev Studio">
+  <meta property="og:description" content="Wunschtermin für ein unverbindliches Erstgespräch mit NovaDev Studio senden.">
+  <meta property="og:url" content="https://novadev-studio.at/termin/">
+  <meta property="og:image" content="https://novadev-studio.at/assets/novadev-logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Erstgespräch anfragen | NovaDev Studio">
+  <meta name="twitter:description" content="Wunschtermin für ein unverbindliches Erstgespräch mit NovaDev Studio senden.">
+  <meta name="twitter:image" content="https://novadev-studio.at/assets/novadev-logo.webp">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/palette.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks"><a href="/#services">Lösungen</a><a href="/leistungen/">Leistungen</a><a href="/about/">Über NovaDev</a><a href="/kontakt/">Kontakt</a></nav>
+    <a class="btn btn-primary desktop-cta" href="/anfrage/">Anfrage starten</a>
+  </div>
+</header>
+<main class="subpage">
+    <section class="page-hero compact-hero"><div class="container page-hero-inner"><span class="section-kicker">Erstgespräch</span><h1>Wann passt es für dich?</h1><p>Sende uns deinen Wunschtermin und das Thema. Wir bestätigen dir den Termin anschließend persönlich. Erst mit der Bestätigung ist der Termin verbindlich.</p></div></section>
+    <section class="section">
+      <div class="container">
+        <form class="booking-shell" data-ajax-form action="https://formspree.io/f/mlgzozjb" method="POST">
+          <input type="hidden" name="_subject" value="Neuer Terminwunsch über NovaDev Studio">
+          <div class="booking-grid">
+            <div class="booking-field"><label for="booking-name">Name *</label><input id="booking-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="booking-field"><label for="booking-email">E-Mail *</label><input id="booking-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="booking-field"><label for="booking-date">Wunschdatum *</label><input id="booking-date" name="wunschdatum" type="date" required></div>
+            <div class="booking-field"><label for="booking-time">Bevorzugtes Zeitfenster *</label><select id="booking-time" name="zeitfenster" required><option value="">Bitte auswählen</option><option>08:00–10:00</option><option>10:00–12:00</option><option>12:00–14:00</option><option>14:00–16:00</option><option>16:00–18:00</option><option>Anderer Zeitraum</option></select></div>
+            <div class="booking-field"><label for="booking-type">Gesprächsart *</label><select id="booking-type" name="gespraechsart" required><option value="">Bitte auswählen</option><option>Telefon</option><option>Online / Videocall</option><option>Vor Ort nach Absprache</option></select></div>
+            <div class="booking-field"><label for="booking-topic">Thema *</label><select id="booking-topic" name="thema" required><option value="">Bitte auswählen</option><option>Website / Redesign</option><option>IT-Support</option><option>Business Tools</option><option>Digital Check</option><option>Care & Betreuung</option><option>Sonstiges</option></select></div>
+            <div class="booking-field full"><label for="booking-message">Kurze Beschreibung</label><textarea id="booking-message" name="nachricht" rows="5" placeholder="Worum soll es im Gespräch ungefähr gehen?"></textarea></div>
+          </div>
+          <label class="privacy-check"><input type="checkbox" required><span>Ich habe die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a> zur Kenntnis genommen.</span></label>
+          <button class="btn btn-primary btn-large full-btn" type="submit">Terminwunsch senden →</button>
+          <p class="booking-note">Der Termin gilt erst nach persönlicher Bestätigung durch NovaDev als vereinbart.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+<footer class="footer">
+  <div class="container footer-main">
+    <div class="footer-brand"><a class="brand" href="/"><span class="brand-mark">N</span><span class="brand-copy"><strong>NovaDev</strong><small>Web & IT Solutions</small></span></a><p>Digitale Lösungen für Selbstständige und kleine Unternehmen.</p></div>
+    <div class="footer-column"><strong>Starten</strong><a href="/anfrage/">Anfrage</a><a href="/preisrechner/">Preisrechner</a><a href="/termin/">Erstgespräch</a><a href="/digital-check/">Digital Check</a></div>
+    <div class="footer-column"><strong>NovaDev</strong><a href="/leistungen/">Leistungen</a><a href="/ratgeber/">Ratgeber</a><a href="/about/">Über NovaDev</a><a href="/kontakt/">Kontakt</a></div>
+    <div class="footer-column"><strong>Rechtliches</strong><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 NovaDev Studio</span><span>Graz, Österreich</span></div>
+</footer>
+<script src="/main.js" defer></script>
+</body>
+</html>
