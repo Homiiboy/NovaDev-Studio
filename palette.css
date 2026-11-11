@@ -733,7 +733,7 @@ summary:focus-visible,.option-card input:focus-visible+span{
 /* Price calculator add-on cards */
 .calc-addons{
   border:0 !important;
-  padding:0 0 22px !important;
+  padding:0 0 24px !important;
   margin:0 !important;
   min-inline-size:0;
 }
@@ -741,21 +741,23 @@ summary:focus-visible,.option-card input:focus-visible+span{
   width:100%;
   padding:0;
   margin:0 0 7px;
-  font-weight:750;
+  font-weight:800;
 }
 .calc-row-help{
   color:var(--muted-2);
-  font-size:.76rem;
+  font-size:.78rem;
   line-height:1.55;
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 .calc-addon-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
+  gap:14px;
 }
 .calc-addon-card{
   position:relative;
+  display:block;
+  min-width:0;
   cursor:pointer;
 }
 .calc-addon-card>input{
@@ -764,62 +766,128 @@ summary:focus-visible,.option-card input:focus-visible+span{
   pointer-events:none;
 }
 .calc-addon-card__body{
-  min-height:112px;
+  position:relative;
+  min-height:150px;
   height:100%;
   display:grid;
-  grid-template-columns:auto 1fr auto;
+  grid-template-columns:44px minmax(0,1fr);
+  gap:14px;
   align-items:start;
-  gap:12px;
-  padding:15px;
+  padding:18px;
   border:1px solid var(--line);
-  border-radius:14px;
+  border-radius:18px;
   background:rgba(255,255,255,.018);
-  transition:border-color .2s ease,background .2s ease,transform .2s ease;
+  overflow:hidden;
+  transition:border-color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.calc-addon-card__body::after{
+  content:"";
+  position:absolute;
+  inset:auto -50px -70px auto;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(69,214,255,.055),transparent 68%);
+  pointer-events:none;
 }
 .calc-addon-card:hover .calc-addon-card__body{
-  border-color:rgba(69,214,255,.28);
+  border-color:rgba(69,214,255,.3);
   background:rgba(255,255,255,.028);
-  transform:translateY(-1px);
+  transform:translateY(-2px);
 }
 .calc-addon-card>input:checked+.calc-addon-card__body{
-  border-color:rgba(69,214,255,.55);
-  background:rgba(45,156,255,.075);
-  box-shadow:inset 0 0 0 1px rgba(69,214,255,.08);
+  border-color:rgba(69,214,255,.68);
+  background:rgba(45,156,255,.085);
+  box-shadow:0 0 0 1px rgba(69,214,255,.12),0 14px 32px rgba(0,0,0,.18);
+}
+.calc-addon-card>input:checked+.calc-addon-card__body::before{
+  content:"✓";
+  position:absolute;
+  right:14px;
+  bottom:14px;
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#04131d;
+  background:var(--blue-2);
+  font-size:.72rem;
+  font-weight:900;
 }
 .calc-addon-card>input:focus-visible+.calc-addon-card__body{
   outline:2px solid var(--blue-2);
   outline-offset:3px;
 }
 .calc-addon-icon{
-  width:32px;
-  height:32px;
+  width:44px;
+  height:44px;
   display:grid;
   place-items:center;
-  flex:0 0 auto;
-  border:1px solid rgba(45,156,255,.22);
-  border-radius:9px;
+  border:1px solid rgba(45,156,255,.25);
+  border-radius:12px;
+  background:rgba(45,156,255,.04);
   color:var(--blue-2);
   font-family:var(--font-tech);
-  font-size:.52rem;
+  font-size:.58rem;
+  letter-spacing:.04em;
+}
+.calc-addon-copy{
+  min-width:0;
+  padding-right:78px;
 }
 .calc-addon-copy strong{
   display:block;
-  margin:1px 0 5px;
   color:var(--text);
-  font-size:.82rem;
-  line-height:1.35;
+  font-size:.92rem;
+  line-height:1.32;
+  margin:2px 0 7px;
 }
 .calc-addon-copy small{
   display:block;
-  color:var(--muted-2);
-  font-size:.7rem;
-  line-height:1.5;
+  color:var(--muted);
+  font-size:.74rem;
+  line-height:1.58;
 }
 .calc-addon-card__body>b{
+  position:absolute;
+  top:16px;
+  right:14px;
+  min-width:66px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  padding:0 9px;
+  border:1px solid rgba(69,214,255,.18);
+  border-radius:999px;
+  background:rgba(69,214,255,.08);
   color:var(--blue-2);
   font-size:.7rem;
+  font-weight:850;
   white-space:nowrap;
-  padding-top:3px;
+}
+@media(max-width:880px){
+  .calc-addon-grid{grid-template-columns:1fr}
+  .calc-addon-card__body{min-height:0}
+}
+@media(max-width:520px){
+  .calc-addon-card__body{
+    grid-template-columns:38px minmax(0,1fr);
+    padding:15px;
+  }
+  .calc-addon-icon{width:38px;height:38px}
+  .calc-addon-copy{padding-right:0}
+  .calc-addon-card__body>b{
+    position:static;
+    grid-column:2;
+    justify-self:start;
+    margin-top:2px;
+  }
+  .calc-addon-card>input:checked+.calc-addon-card__body::before{
+    right:12px;
+    bottom:12px;
+  }
 }
 
 /* Appointment availability rules */
