@@ -345,15 +345,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const footerColumns = [...document.querySelectorAll(".footer-column")];
   const novaDevFooter = footerColumns.find((column) => column.querySelector("strong")?.textContent.trim() === "NovaDev");
-  if (novaDevFooter && !novaDevFooter.querySelector(".footer-fiverr")) {
-    const fiverrLink = document.createElement("a");
-    fiverrLink.className = "footer-fiverr";
-    fiverrLink.href = "https://www.fiverr.com/pe/Webmdbd";
-    fiverrLink.target = "_blank";
-    fiverrLink.rel = "noopener noreferrer";
+
+  if (novaDevFooter) {
+    let instagramLink = novaDevFooter.querySelector('a[href*="instagram.com"]');
+    if (!instagramLink) {
+      instagramLink = document.createElement("a");
+      instagramLink.href = "https://instagram.com/novadev_webdev";
+      instagramLink.target = "_blank";
+      instagramLink.rel = "noopener noreferrer";
+      novaDevFooter.appendChild(instagramLink);
+    }
+    instagramLink.classList.add("footer-social-link", "footer-instagram");
+    instagramLink.setAttribute("aria-label", "NovaDev Studio auf Instagram öffnen");
+    instagramLink.innerHTML = '<span class="footer-social-icon instagram-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="5" width="14" height="14" rx="4"></rect><circle cx="12" cy="12" r="3.2"></circle><circle class="instagram-dot" cx="16.8" cy="7.2" r="1"></circle></svg></span><span>Instagram</span><span class="footer-social-arrow" aria-hidden="true">↗</span>';
+
+    let fiverrLink = novaDevFooter.querySelector(".footer-fiverr");
+    if (!fiverrLink) {
+      fiverrLink = document.createElement("a");
+      fiverrLink.href = "https://www.fiverr.com/pe/Webmdbd";
+      fiverrLink.target = "_blank";
+      fiverrLink.rel = "noopener noreferrer";
+      novaDevFooter.appendChild(fiverrLink);
+    }
+    fiverrLink.className = "footer-social-link footer-fiverr";
     fiverrLink.setAttribute("aria-label", "NovaDev Studio auf Fiverr öffnen");
-    fiverrLink.innerHTML = '<span class="fiverr-icon" aria-hidden="true">fi</span><span>Fiverr</span><span class="footer-social-arrow" aria-hidden="true">↗</span>';
-    novaDevFooter.appendChild(fiverrLink);
+    fiverrLink.innerHTML = '<span class="footer-social-icon fiverr-icon" aria-hidden="true"><span>fi</span></span><span>Fiverr</span><span class="footer-social-arrow" aria-hidden="true">↗</span>';
   }
 
   const main = document.querySelector("main");
