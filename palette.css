@@ -993,3 +993,42 @@ summary:focus-visible,.option-card input:focus-visible+span{
 .preview-fitpeak-scene .pf-copy,
 .preview-fitpeak-scene .pf-ring,
 .preview-travelia-scene .pt-copy{position:absolute;z-index:2}
+
+
+/* NovaDev Fiverr footer link */
+.footer-fiverr{
+  display:inline-flex !important;
+  width:max-content;
+  align-items:center;
+  gap:9px;
+  margin-top:5px;
+  color:var(--muted) !important;
+  transition:color .2s ease,transform .2s ease;
+}
+.footer-fiverr:hover{
+  color:#fff !important;
+  transform:translateX(2px);
+}
+.fiverr-icon{
+  width:24px;
+  height:24px;
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 auto;
+  border-radius:50%;
+  background:#1dbf73;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:-.06em;
+  line-height:1;
+}
+.footer-social-arrow{
+  color:#1dbf73;
+  font-size:.78rem;
+  transition:transform .2s ease;
+}
+.footer-fiverr:hover .footer-social-arrow{
+  transform:translate(2px,-2px);
+}
