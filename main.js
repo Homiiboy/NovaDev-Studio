@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".brand-mark").forEach((mark) => {
     const img = document.createElement("img");
     img.className = "brand-logo-mark";
-    img.src = "/assets/novadev-mark.webp";
+    img.src = "/assets/Neonfarbenes%20geometrisches%20N-Logo.png";
     img.alt = "";
     img.width = 42;
     img.height = 42;
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const founderMark = document.querySelector(".founder-mark");
   if (founderMark && !founderMark.querySelector("img")) {
-    founderMark.innerHTML = '<img src="/assets/novadev-mark.webp" alt="NovaDev N Logo" width="115" height="115">';
+    founderMark.innerHTML = '<img src="/assets/Neonfarbenes%20geometrisches%20N-Logo.png" alt="NovaDev N Logo" width="115" height="115">';
   }
 
   const burger = document.getElementById("burger");
