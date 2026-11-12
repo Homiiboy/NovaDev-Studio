@@ -343,6 +343,19 @@ document.addEventListener("DOMContentLoaded", () => {
     else nav.prepend(projectsLink);
   }
 
+  const footerColumns = [...document.querySelectorAll(".footer-column")];
+  const novaDevFooter = footerColumns.find((column) => column.querySelector("strong")?.textContent.trim() === "NovaDev");
+  if (novaDevFooter && !novaDevFooter.querySelector(".footer-fiverr")) {
+    const fiverrLink = document.createElement("a");
+    fiverrLink.className = "footer-fiverr";
+    fiverrLink.href = "https://www.fiverr.com/pe/Webmdbd";
+    fiverrLink.target = "_blank";
+    fiverrLink.rel = "noopener noreferrer";
+    fiverrLink.setAttribute("aria-label", "NovaDev Studio auf Fiverr öffnen");
+    fiverrLink.innerHTML = '<span class="fiverr-icon" aria-hidden="true">fi</span><span>Fiverr</span><span class="footer-social-arrow" aria-hidden="true">↗</span>';
+    novaDevFooter.appendChild(fiverrLink);
+  }
+
   const main = document.querySelector("main");
   if (main && !main.id) main.id = "main-content";
 
