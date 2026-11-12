@@ -995,8 +995,8 @@ summary:focus-visible,.option-card input:focus-visible+span{
 .preview-travelia-scene .pt-copy{position:absolute;z-index:2}
 
 
-/* NovaDev Fiverr footer link */
-.footer-fiverr{
+/* NovaDev monochrome social footer links */
+.footer-social-link{
   display:inline-flex !important;
   width:max-content;
   align-items:center;
@@ -1005,30 +1005,54 @@ summary:focus-visible,.option-card input:focus-visible+span{
   color:var(--muted) !important;
   transition:color .2s ease,transform .2s ease;
 }
-.footer-fiverr:hover{
+.footer-social-link:hover{
   color:#fff !important;
   transform:translateX(2px);
 }
-.fiverr-icon{
-  width:24px;
-  height:24px;
+.footer-social-icon{
+  width:25px;
+  height:25px;
   display:inline-grid;
   place-items:center;
   flex:0 0 auto;
   border-radius:50%;
-  background:#1dbf73;
-  color:#fff;
+  background:#fff;
+  color:#050505;
+  border:1px solid rgba(255,255,255,.92);
+  box-shadow:0 0 0 1px rgba(255,255,255,.04);
+}
+.instagram-icon svg{
+  width:15px;
+  height:15px;
+  fill:none;
+  stroke:#050505;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.instagram-icon .instagram-dot{
+  fill:#050505;
+  stroke:none;
+}
+.fiverr-icon{
   font-family:Arial,Helvetica,sans-serif;
+}
+.fiverr-icon span{
+  display:block;
+  color:#050505;
   font-size:.68rem;
   font-weight:900;
-  letter-spacing:-.06em;
+  letter-spacing:-.08em;
   line-height:1;
+  transform:translateY(-.5px);
 }
 .footer-social-arrow{
-  color:#1dbf73;
+  color:#fff;
+  opacity:.65;
   font-size:.78rem;
-  transition:transform .2s ease;
+  transition:transform .2s ease,opacity .2s ease;
 }
-.footer-fiverr:hover .footer-social-arrow{
+.footer-social-link:hover .footer-social-arrow{
   transform:translate(2px,-2px);
+  opacity:1;
 }
